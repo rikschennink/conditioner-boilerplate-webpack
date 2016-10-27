@@ -106,17 +106,10 @@
 			// AMD loader overrides
 			loader:{
 				require:function(paths, callback) {
-
-					var path = paths[0];
-
-					console.log(path);
-
-					__webpack_require__(14)("./" + path)(
+					__webpack_require__(14)("./" + paths[0])(
 						callback,
-						function onError() {
-							// error happened
-						});
-
+						function onError() {}
+					);
 				},
 				config:function(path,options) {},
 				toUrl:function(path) { return path; }

@@ -6,17 +6,10 @@ require(['./lib/conditioner'],function(conditioner) {
 		// AMD loader overrides
 		loader:{
 			require:function(paths, callback) {
-
-				var path = paths[0];
-
-				console.log(path);
-
-				require('async-module!./ui/' + path)(
+				require('async-module!./ui/' + paths[0])(
 					callback,
-					function onError() {
-						// error happened
-					});
-
+					function onError() {}
+				);
 			},
 			config:function(path,options) {},
 			toUrl:function(path) { return path; }
