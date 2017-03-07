@@ -1,20 +1,22 @@
-webpackJsonp([2],{
+webpackJsonp([5],{
 
-/***/ 13:
+/***/ 19:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Tests if an elements dimensions match certain expectations
-	 * @module monitors/element
+	 * Tests if the window dimensions match certain expectations
+	 * @module monitors/window
 	 */
 	(function (win, undefined) {
 
 	    'use strict';
 
-	    var isVisible = function (element) {
-	        var viewHeight = win.innerHeight;
-	        var bounds = element.getBoundingClientRect();
-	        return (bounds.top > 0 && bounds.top < viewHeight) || (bounds.bottom > 0 && bounds.bottom < viewHeight);
+	    var doc = win.document;
+	    var width = function () {
+	        return win.innerWidth || doc.documentElement.clientWidth;
+	    };
+	    var height = function () {
+	        return win.innerHeight || doc.documentElement.clientHeight;
 	    };
 	    var toInt = function (value) {
 	        return parseInt(value, 10);
@@ -22,25 +24,20 @@ webpackJsonp([2],{
 
 	    var exports = {
 	        trigger: {
-	            'resize': win,
-	            'scroll': win
+	            'resize': win
 	        },
 	        test: {
-	            'visible': function (data) {
-	                data.seen = isVisible(data.element);
-	                return data.seen && data.expected;
-	            },
 	            'min-width': function (data) {
-	                return toInt(data.expected) <= data.element.offsetWidth;
+	                return toInt(data.expected) <= width();
 	            },
 	            'max-width': function (data) {
-	                return toInt(data.expected) >= data.element.offsetWidth;
+	                return toInt(data.expected) >= width();
 	            },
 	            'min-height': function (data) {
-	                return toInt(data.expected) <= data.element.offsetHeight;
+	                return toInt(data.expected) <= height();
 	            },
 	            'max-height': function (data) {
-	                return toInt(data.expected) >= data.element.offsetHeight;
+	                return toInt(data.expected) >= height();
 	            }
 	        }
 	    };

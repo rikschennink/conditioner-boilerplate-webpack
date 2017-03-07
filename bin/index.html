@@ -8,7 +8,12 @@
 <body>
 
 <p>Clock module should load below</p>
-<div data-module="Clock"></div>
+<div data-module="ui/Clock"></div>
+
+<p>Zoom module should load below</p>
+<div data-module="ui/Zoom" data-conditions="media:{(min-width:40em)}">
+    I can be zoomed
+</div>
 
 <script src="app.js"></script>
 

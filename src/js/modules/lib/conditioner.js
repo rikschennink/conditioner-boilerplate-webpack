@@ -6,7 +6,7 @@
     'use strict';
 
     // returns conditioner API
-    var factory = function (require, Observer, Promise, contains, matchesSelector, mergeObjects) {
+    var factory = function (requireRelative, Observer, Promise, contains, matchesSelector, mergeObjects) {
 
         // private vars
         var _options;
@@ -2397,7 +2397,10 @@
             },
             'loader': {
                 'require': function (paths, callback) {
-                    require(paths, callback);
+                    if (!requireRelative) {
+                        return;
+                    }
+                    requireRelative(paths, callback);
                 },
                 'config': function (path, options) {
                     var config = {};
@@ -3019,7 +3022,13 @@
     // CommonJS
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = factory(
-        require, require('./utils/Observer'), require('./utils/Promise'), require('./utils/contains'), require('./utils/matchesSelector'), require('./utils/mergeObjects'));
+            null,
+            require('./utils/Observer'),
+            require('./utils/Promise'),
+            require('./utils/contains'),
+            require('./utils/matchesSelector'),
+            require('./utils/mergeObjects')
+        );
     }
     // AMD
     else if (typeof define === 'function' && define.amd) {

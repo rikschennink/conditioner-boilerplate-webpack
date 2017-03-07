@@ -1,20 +1,28 @@
-// load conditioner
-require(['./lib/conditioner'],function(conditioner) {
+var conditioner = require('./modules/lib/conditioner');
 
-    conditioner.init({
+conditioner.init({
 
-		// AMD loader overrides
-		loader:{
-			require:function(paths, callback) {
-				require('async-module!./ui/' + paths[0])(
-					callback,
-					function onError() {}
-				);
-			},
-			config:function(path,options) {},
-			toUrl:function(path) { return path; }
-		}
+	// set conditioner monitor paths
+	paths:{
+		monitors: 'lib/monitors/'
+	},
 
-	});
+	// AMD loader overrides
+	loader:{
+		require:function(paths, callback) {
+
+			// get path
+			var path = paths[0];
+
+			// get module
+			require('async-module!./modules/' + path)(
+				callback,
+				function onError() {}
+			);
+
+		},
+		config:function(path, options) { },
+		toUrl:function(path) { return path; }
+	}
 
 });
