@@ -1,6 +1,6 @@
 # Conditioner Webpack 2 Boilerplate
 
-A webpack 2 boilerplate for [Conditioner](https://pqina.nl/conditioner).
+A webpack 2 boilerplate for [Conditioner](https://github.com/rikschennink/conditioner).
 
 Install dependencies from npm.
 
