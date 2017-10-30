@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "conditioner-core": "^2.0.0"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "async-module-loader": "^1.3.0",
-    "webpack": "^1.13.3"
-  }
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "author": "Rik Schennink <hello@rikschennink.nl> (http://rikschennink.nl/)",
+  "license": "MIT"
 }

@@ -1,12 +1,13 @@
-var AsyncModulePlugin = require('async-module-loader/plugin');
+var path = require('path');
 
 module.exports = {
-	entry: './src/js/main.js',
-	output: {
-		path: './bin',
-		filename: 'app.js'
-	},
-	plugins: [
-		new AsyncModulePlugin()
-	]
+    entry: './src/index.js',
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist'
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
 };

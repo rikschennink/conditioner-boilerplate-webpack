@@ -1,7 +1,21 @@
-# Conditioner Boilerplate Webpack
+# Conditioner Webpack 2 Boilerplate
 
-Setup of [Conditioner](http://conditionerjs.com) in combination with Webpack and [Async Module Loader Webpack Pluging](https://github.com/NekR/async-module-loader).
+A webpack 2 boilerplate for [Conditioner](https://pqina.nl/conditioner).
 
-Run `npm i webpack -g` to install webpack.
+Install dependencies from npm.
 
-Run `webpack` to build to `/bin` folder.
+```bash
+npm i
+```
+
+Build the project.
+
+```bash
+npm run build
+```
+
+Setup server @ `http://localhost:8080`
+
+```bash
+npm start
+```
