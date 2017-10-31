@@ -6,7 +6,13 @@ conditioner.addPlugin({
     moduleSetName: (name) => `./ui/${ name }.js`,
     
     // override the import (this makes webpack bundle all the dynamically included files as well)
-    moduleImport: (name) => import(`${ name }`)
+    moduleImport: (name) => import(
+        /* https://webpack.js.org/api/module-methods/#import- */
+        /* set to "eager" to create a single chunk for all modules */
+        /* set to "lazy" to create a separate chunk for each module */
+        /* webpackMode: "lazy" */
+        `${ name }`
+    )
 
 });
 
