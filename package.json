@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rikschennink/conditioner-boilerplate-webpack.git"
+  },
   "dependencies": {
     "conditioner-core": "^2.0.6"
   },
