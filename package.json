@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "conditioner-core": "^2.0.4"
+    "conditioner-core": "^2.0.6"
   },
   "devDependencies": {
     "webpack": "^3.8.1",
