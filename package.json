@@ -8,7 +8,7 @@
     "url": "https://github.com/rikschennink/conditioner-boilerplate-webpack.git"
   },
   "dependencies": {
-    "conditioner-core": "^2.0.6"
+    "conditioner-core": "^2.1.0"
   },
   "devDependencies": {
     "webpack": "^3.8.1",
